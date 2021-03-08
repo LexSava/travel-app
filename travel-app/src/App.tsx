@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
-
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello World</h1>
-    <Button variant="primary">Button</Button>
+     <Header/>
+     <Main/>
     </div>
   );
 }
