@@ -6,7 +6,7 @@ import {Form} from "react-bootstrap"
 const Localization = () => {
 
     return (
-        <Form inline>
+        <Form inline className="ml-5">
         <Form.Group controlId="exampleForm.SelectCustom">
           <Form.Control as="select" custom>
             <option>en</option>
