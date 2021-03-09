@@ -11,7 +11,7 @@ const Header = () => {
        <header className="d-flex justify-content-between flex-wrap header">
            <div className="logo-block d-flex">
            <img src={logo} alt="logo" className="logo text-warning"/>
-           <h1 className="head text-primary ">Travel App</h1>
+           <h1 className="head text-primary ">Travel Now</h1>
            </div>
           <div className="d-flex justify-content-between flex-wrap">
           <Search/>
