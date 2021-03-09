@@ -1,6 +1,7 @@
 .main {
   // height: 800px;
-  //   background-image: url(../../assets/img/21922.jpg);
+  background-image: url(../../assets/img/background_main.jpg);
+  background-size: 100%;
   padding: 20px 10px;
 }
 .card-country {
@@ -8,7 +9,9 @@
   margin: 20px 10px;
   overflow: hidden;
   transition: all 0.2s linear;
+  background-color: #ffffff45;
   img {
+    height: 165px;
     transition: all 0.2s linear;
   }
 }
@@ -17,4 +20,10 @@
   img {
     transform: scale(1.05, 1.05);
   }
+}
+.card-country-title {
+  font-weight: 800;
+}
+.card-country-text {
+  font-weight: 600;
 }
