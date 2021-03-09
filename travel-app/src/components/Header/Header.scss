@@ -4,19 +4,23 @@
 .header {
   padding: 20px 10px;
   // justify-content: space-between;
-  background-color: #71a2a86e;
+  // background-color: #71a2a86e;
 }
 .logo-block {
   align-items: center;
   cursor: pointer;
   transition: all 0.4s linear;
+  h1 {
+    font-weight: 900;
+  }
 }
 .logo-block:hover {
   transform: scale(1.02, 1.02);
 }
 .logo {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  // height: 60px;
+  border-radius: 50px;
 }
 .head {
   margin-left: 15px;
