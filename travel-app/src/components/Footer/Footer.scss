@@ -1,26 +1,36 @@
 .footer-block {
   padding: 0;
-
-  img{
+  img {
     height: 50px;
     width: 50px;
-    transition: all 0.5s;
+    transition: all 0.4s linear;
   }
-  
+
   img:hover {
     transform: rotate(45deg);
   }
 
-  a{
-    color: chocolate;
+  a {
+    color: #ffc300;
     text-decoration: none;
     vertical-align: middle;
     margin: 0 10px;
     transition: all 0.3s;
+    font-weight: 900;
+    font-size: 1em;
   }
   a:hover {
-  color: green;
+    color: green;
+  }
+  p {
+    color: green;
+    font-weight: 900;
+    margin: 0;
   }
 }
-
-
+.footer {
+  padding: 20px 10px;
+  align-items: center;
+  // justify-content: space-between;
+  // background-color: #71a2a86e;
+}
