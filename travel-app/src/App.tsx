@@ -66,19 +66,11 @@ function App() {
     },
   ]);
 
-  // const [arrCountrys, setArrCountrys] = useState<any>("");
-
-  // const handleSubmit = (val: any) => {
-  //   setArrCountrys(val);
-  // };
-
   const [search, setSearch] = useState<any>(countrys);
   const [countrysCard, setcountrysCard] = useState<any>(search);
   const processSearch = (text: string) => {
     setSearch(text);
     setcountrysCard(text);
-    // console.log("Process search", text);
-    console.log(search);
   };
 
   return (
