@@ -2,12 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, Button } from "react-bootstrap";
 import "./Main.scss";
 
-type MainProps = {
+interface MainProps {
   countrysCard: any;
 };
 
-const Main = ({ countrysCard }: MainProps) => {
-  const cards: any = countrysCard.map((item: any) => {
+const Main:React.FC<MainProps>= (props) => {
+  const cards: any = props.countrysCard.map((item: any) => {
     return (
       <Card
         style={{ width: "18rem" }}
