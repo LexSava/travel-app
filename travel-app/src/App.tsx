@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Country from './components/Country/Country';
 import Footer from './components/Footer/Footer';
+import { ICountrys } from './utils/interfaces';
 
 import belarusHeadIMg from './assets/img/belarus.jpg';
 import ukraineHeadIMg from './assets/img/ukraine.jpg';
@@ -16,7 +17,7 @@ import netherlandsHeadIMg from './assets/img/netherlands.jpg';
 import canadaHeadIMg from './assets/img/canada.jpg';
 
 function App() {
-  const [countrys, setCountrys] = useState<any>([
+  const [countrys, setCountrys] = useState<ICountrys[]>([
     {
       id: 1,
       country: 'Belarus',
