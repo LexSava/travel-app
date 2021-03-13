@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
-import Localization from "../Localization/Localization";
-import { Container } from "react-bootstrap";
+import { Button, Form, FormControl, Container } from "react-bootstrap";
 import logo from "../../assets/img/logo.jpg";
-import { Button, Form, FormControl } from "react-bootstrap";
 
 interface HeaderProps {
   onSearch(text: string): void;
+  onSelectedLanguage(val: string): void;
   countrys: any;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [inputText, setInputText] = useState<string>("");
+  const [language, srtLanguage] = useState<string>("");
 
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
@@ -30,6 +30,10 @@ const Header: React.FC<HeaderProps> = (props) => {
   const changeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
     inputLog();
+  };
+
+  const changeLanguage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    props.onSelectedLanguage(event.target.value);
   };
 
   const keyPressHandler = (event: React.KeyboardEvent) => {
@@ -69,7 +73,15 @@ const Header: React.FC<HeaderProps> = (props) => {
             </Button>
           </Form>
 
-          <Localization />
+          <Form inline className="ml-5">
+            <Form.Group controlId="exampleForm.SelectCustom">
+              <Form.Control as="select" custom onChange={changeLanguage}>
+                <option value="en">en</option>
+                <option value="ru">ru</option>
+                <option value="be">be</option>
+              </Form.Control>
+            </Form.Group>
+          </Form>
         </div>
       </header>
     </Container>
