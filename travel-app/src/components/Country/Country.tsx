@@ -8,7 +8,7 @@ import Gallery from './Gallery/Gallery';
 import TravelAppService from './../../services/TravelAppService';
 import { ISights } from './../../utils/interfaces';
 
-import './Country.scss';
+import "./Country.scss";
 
 type CountryProps = {
   countryInfo: CountryType;
