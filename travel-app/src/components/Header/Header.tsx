@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
-import Localization from "../Localization/Localization";
-import { Container } from "react-bootstrap";
+import { Button, Form, FormControl, Container } from "react-bootstrap";
 import logo from "../../assets/img/logo.jpg";
-import { Button, Form, FormControl } from "react-bootstrap";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 interface HeaderProps {
   onSearch(text: string): void;
+  onSelectedLanguage(val: string): void;
   countrys: any;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [inputText, setInputText] = useState<string>("");
+  const [language, setLanguage] = useLocalStorage("en", "");
 
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
@@ -21,7 +22,6 @@ const Header: React.FC<HeaderProps> = (props) => {
     });
     if (inputText.length === 0) {
       matches = [];
-      props.onSearch(props.countrys);
     } else {
       props.onSearch(matches);
     }
@@ -32,6 +32,11 @@ const Header: React.FC<HeaderProps> = (props) => {
     inputLog();
   };
 
+  const changeLanguage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLanguage(event.target.value);
+    props.onSelectedLanguage(event.target.value);
+  };
+
   const keyPressHandler = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       inputLog();
@@ -39,11 +44,11 @@ const Header: React.FC<HeaderProps> = (props) => {
     }
   };
 
-  (function displayAllCards(): void {
+  useEffect(() => {
     if (inputText.length === 0) {
       props.onSearch(props.countrys);
     }
-  })();
+  });
 
   return (
     <Container className="header-block">
@@ -69,7 +74,20 @@ const Header: React.FC<HeaderProps> = (props) => {
             </Button>
           </Form>
 
-          <Localization />
+          <Form inline className="ml-5">
+            <Form.Group controlId="exampleForm.SelectCustom">
+              <Form.Control
+                as="select"
+                custom
+                value={language}
+                onChange={changeLanguage}
+              >
+                <option value="en">en</option>
+                <option value="ru">ru</option>
+                <option value="be">be</option>
+              </Form.Control>
+            </Form.Group>
+          </Form>
         </div>
       </header>
     </Container>

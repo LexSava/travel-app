@@ -12,9 +12,13 @@ import './Country.scss';
 
 type CountryProps = {
   countryInfo: CountryType;
+  conveyLanguage: string;
 };
 
-const Country = ({ countryInfo }: CountryProps): JSX.Element => {
+const Country = ({
+  countryInfo,
+  conveyLanguage,
+}: CountryProps): JSX.Element => {
   const [sightsInfo, setSightsInfo] = useState<ISights[] | null>(null);
 
   const getCountrySightsApi = (): Promise<void> =>
@@ -41,7 +45,7 @@ const Country = ({ countryInfo }: CountryProps): JSX.Element => {
 
   return (
     <div>
-      <Overview countryInfo={countryInfo} />
+      <Overview countryInfo={countryInfo} conveyLanguage={conveyLanguage} />
       {gallery}
     </div>
   );

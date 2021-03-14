@@ -6,7 +6,7 @@ import Main from './components/Main/Main';
 import Country from './components/Country/Country';
 import Footer from './components/Footer/Footer';
 import { ICountrys } from './utils/interfaces';
-
+import useLocalStorage from './hooks/useLocalStorage';
 import belarusHeadIMg from './assets/img/belarus.jpg';
 import ukraineHeadIMg from './assets/img/ukraine.jpg';
 import lithuaniaHeadIMg from './assets/img/lithuania.jpg';
@@ -70,6 +70,13 @@ function App() {
 
   const [search, setSearch] = useState<any>(countrys);
   const [countrysCard, setcountrysCard] = useState<any>(search);
+
+  const [selectedLanguage, setSelectedLanguage] = useLocalStorage('en', '');
+
+  const processSelectedLanguage = (val: any) => {
+    setSelectedLanguage(val);
+  };
+
   const processSearch = (text: string) => {
     setSearch(text);
     setcountrysCard(text);
@@ -77,9 +84,13 @@ function App() {
 
   return (
     <div className='App'>
-      <Header countrys={countrys} onSearch={processSearch} />
+      <Header
+        countrys={countrys}
+        onSearch={processSearch}
+        onSelectedLanguage={processSelectedLanguage}
+      />
       <Main countrysCard={countrysCard} />
-      {/* <Country countryInfo={countrys[0]} /> */}
+      {/* <Country countryInfo={countrys[0]} conveyLanguage={selectedLanguage} /> */}
       <Footer />
     </div>
   );
