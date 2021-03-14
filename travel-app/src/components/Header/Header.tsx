@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Header.scss";
-import { Button, Form, FormControl, Container } from "react-bootstrap";
-import logo from "../../assets/img/logo.jpg";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Header.scss';
+import { Button, Form, FormControl, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/img/logo.jpg';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 interface HeaderProps {
   onSearch(text: string): void;
@@ -12,12 +13,12 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const [inputText, setInputText] = useState<string>("");
-  const [language, setLanguage] = useLocalStorage("en", "");
+  const [inputText, setInputText] = useState<string>('');
+  const [language, setLanguage] = useLocalStorage('en', '');
 
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
-      const regex: any = new RegExp(`^${inputText}`, "gi");
+      const regex: any = new RegExp(`^${inputText}`, 'gi');
       return state.country.match(regex) || state.capital.match(regex);
     });
     if (inputText.length === 0) {
@@ -38,7 +39,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   };
 
   const keyPressHandler = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       inputLog();
       event.preventDefault();
     }
@@ -51,40 +52,42 @@ const Header: React.FC<HeaderProps> = (props) => {
   });
 
   return (
-    <Container className="header-block">
-      <header className="d-flex justify-content-between flex-wrap header">
-        <div className="logo-block d-flex">
-          <img src={logo} alt="logo" className="logo text-warning" />
-          <h1 className="head text-primary ">Travel Now</h1>
-        </div>
-        <div className="d-flex justify-content-between flex-wrap">
+    <Container className='header-block'>
+      <header className='d-flex justify-content-between flex-wrap header'>
+        <Link to='/'>
+          <div className='logo-block d-flex'>
+            <img src={logo} alt='logo' className='logo text-warning' />
+            <h1 className='head text-primary '>Travel Now</h1>
+          </div>
+        </Link>
+        <div className='d-flex justify-content-between flex-wrap'>
           <Form inline>
             <FormControl
-              type="search"
-              placeholder="Search"
-              className="mr-sm-2"
+              type='search'
+              placeholder='Search'
+              className='mr-sm-2'
               autoFocus
               value={inputText}
               onChange={changeHandle}
               onInput={changeHandle}
               onKeyPress={keyPressHandler}
             ></FormControl>
-            <Button variant="outline-info" onClick={inputLog}>
+            <Button variant='outline-info' onClick={inputLog}>
               Search
             </Button>
           </Form>
 
-          <Form inline className="ml-5">
-            <Form.Group controlId="exampleForm.SelectCustom">
+          <Form inline className='ml-5'>
+            <Form.Group controlId='exampleForm.SelectCustom'>
               <Form.Control
-                as="select"
+                as='select'
                 custom
                 value={language}
                 onChange={changeLanguage}
               >
-                <option value="en">en</option>
-                <option value="ru">ru</option>
-                <option value="be">be</option>
+                <option value='en'>en</option>
+                <option value='ru'>ru</option>
+                <option value='be'>be</option>
               </Form.Control>
             </Form.Group>
           </Form>
