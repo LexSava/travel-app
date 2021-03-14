@@ -1,35 +1,38 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Jumbotron, Container, Image } from 'react-bootstrap';
-import './Overview.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Jumbotron, Container, Image } from "react-bootstrap";
+import "./Overview.scss";
 
-import CountryType from './../../../types/CountryModel';
+import CountryType from "./../../../types/CountryModel";
+import DateWidget from "../../DateWidget/DateWidget";
 
 type OverviewProps = {
   countryInfo: CountryType;
+  conveyLanguage: string;
 };
 
-const Overview = ({ countryInfo }: OverviewProps) => {
+const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
   return (
-    <div className='country-overview'>
+    <div className="country-overview">
       <Jumbotron fluid style={{ backgroundImage: `url(${countryInfo.img})` }}>
-        <Container>
-          <div className='country-overview__main'>
+        <Container className="position-relative">
+          <DateWidget conveyLanguage={conveyLanguage}/>
+          <div className="country-overview__main">
             <Image
-              className='country-overview__main__image'
+              className="country-overview__main__image"
               src={countryInfo.img}
               rounded
             />
-            <div className='country-overview__main__content'>
-              <div className='country-overview__main__content__capital'>
-                <h1 className='text-primary overview-title'>
+            <div className="country-overview__main__content">
+              <div className="country-overview__main__content__capital">
+                <h1 className="text-primary overview-title">
                   {countryInfo.country}
                 </h1>
-                <h2 className='text-capital'>{countryInfo.capital}</h2>
+                <h2 className="text-capital">{countryInfo.capital}</h2>
               </div>
             </div>
           </div>
 
-          <p className='country-overview__description'>
+          <p className="country-overview__description">
             Belarus,[a] officially the Republic of Belarus,[b] is a landlocked
             country in Eastern Europe. It is bordered by Russia to the east and
             northeast, Ukraine to the south, Poland to the west, and Lithuania
