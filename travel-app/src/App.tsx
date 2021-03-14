@@ -79,7 +79,7 @@ function App() {
     <div className='App'>
       <Header countrys={countrys} onSearch={processSearch} />
       <Main countrysCard={countrysCard} />
-      {/* <Country countryInfo={countrys[4]} /> */}
+      {/* <Country countryInfo={countrys[0]} /> */}
       <Footer />
     </div>
   );
