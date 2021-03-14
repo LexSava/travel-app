@@ -4,18 +4,24 @@ import Moment from "react-moment";
 import moment from "moment";
 import "moment/locale/ru";
 import "moment/locale/be";
-
+import React from "react";
 import { Card, Container } from "react-bootstrap";
 
-const DateWidget: React.FC = () => {
+interface HeaderDateWidget {
+  conveyLanguage: string;
+}
+
+const DateWidget: React.FC<HeaderDateWidget> = (props) => {
   (function setDateTimezone() {
-    return moment.locale("en");
+    return moment.locale(props.conveyLanguage);
   })();
 
   return (
     <Container className="p-1 date-widget-block">
       <Card className="date-widget-card">
-        <Card.Header className="text-primary font-weight-normal">Time in the capital</Card.Header>
+        <Card.Header className="text-primary font-weight-normal">
+          Time in the capital
+        </Card.Header>
         <Card.Body>
           <Card.Title>
             <Moment format="DD" interval={1000} className="m-1" />

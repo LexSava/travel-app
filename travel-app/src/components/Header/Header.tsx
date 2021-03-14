@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
 import { Button, Form, FormControl, Container } from "react-bootstrap";
 import logo from "../../assets/img/logo.jpg";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 interface HeaderProps {
   onSearch(text: string): void;
@@ -12,7 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [inputText, setInputText] = useState<string>("");
-  const [language, srtLanguage] = useState<string>("");
+  const [language, setLanguage] = useLocalStorage("en", "");
 
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
@@ -21,7 +22,6 @@ const Header: React.FC<HeaderProps> = (props) => {
     });
     if (inputText.length === 0) {
       matches = [];
-      props.onSearch(props.countrys);
     } else {
       props.onSearch(matches);
     }
@@ -33,6 +33,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   };
 
   const changeLanguage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLanguage(event.target.value);
     props.onSelectedLanguage(event.target.value);
   };
 
@@ -43,11 +44,11 @@ const Header: React.FC<HeaderProps> = (props) => {
     }
   };
 
-  (function displayAllCards(): void {
+  useEffect(() => {
     if (inputText.length === 0) {
       props.onSearch(props.countrys);
     }
-  })();
+  });
 
   return (
     <Container className="header-block">
@@ -75,7 +76,12 @@ const Header: React.FC<HeaderProps> = (props) => {
 
           <Form inline className="ml-5">
             <Form.Group controlId="exampleForm.SelectCustom">
-              <Form.Control as="select" custom onChange={changeLanguage}>
+              <Form.Control
+                as="select"
+                custom
+                value={language}
+                onChange={changeLanguage}
+              >
                 <option value="en">en</option>
                 <option value="ru">ru</option>
                 <option value="be">be</option>

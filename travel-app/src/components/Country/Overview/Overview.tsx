@@ -7,14 +7,15 @@ import DateWidget from "../../DateWidget/DateWidget";
 
 type OverviewProps = {
   countryInfo: CountryType;
+  conveyLanguage: string;
 };
 
-const Overview = ({ countryInfo }: OverviewProps) => {
+const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
   return (
     <div className="country-overview">
       <Jumbotron fluid style={{ backgroundImage: `url(${countryInfo.img})` }}>
         <Container className="position-relative">
-          <DateWidget />
+          <DateWidget conveyLanguage={conveyLanguage}/>
           <div className="country-overview__main">
             <Image
               className="country-overview__main__image"
