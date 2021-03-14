@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -83,16 +84,24 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <Header
-        countrys={countrys}
-        onSearch={processSearch}
-        onSelectedLanguage={processSelectedLanguage}
-      />
-      <Main countrysCard={countrysCard} />
-      {/* <Country countryInfo={countrys[0]} conveyLanguage={selectedLanguage} /> */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Header
+          countrys={countrys}
+          onSearch={processSearch}
+          onSelectedLanguage={processSelectedLanguage}
+        />
+        <Switch>
+          <Route path='/:country'>
+            <Country countries={countrys} conveyLanguage={selectedLanguage} />
+          </Route>
+          <Route path='/'>
+            <Main countrysCard={countrysCard} />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
