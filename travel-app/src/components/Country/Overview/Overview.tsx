@@ -4,6 +4,7 @@ import "./Overview.scss";
 
 import CountryType from "./../../../types/CountryModel";
 import DateWidget from "../../DateWidget/DateWidget";
+import Video from "../../Video/Video"
 
 type OverviewProps = {
   countryInfo: CountryType;
@@ -44,7 +45,8 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
             40% of its total land area forested. Minsk is the country's capital
             and largest city.
           </p>
-        </Container>
+      <Video />
+      </Container>
       </Jumbotron>
       <Container></Container>
     </div>
