@@ -1,0 +1,26 @@
+.footer-block {
+  padding: 0;
+}
+
+.footer-block img {
+  height: 50px;
+  width: 50px;
+  transition: all 0.5s;
+}
+
+.footer-block img:hover {
+  transform: rotate(45deg);
+}
+
+.footer-block a {
+  color: chocolate;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 0 10px;
+  transition: all 0.3s;
+}
+
+.footer-block a:hover {
+  color: green;
+}
+/*# sourceMappingURL=Footer.css.map */

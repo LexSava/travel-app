@@ -1,0 +1,23 @@
+.main {
+  padding: 20px 10px;
+}
+
+.card-country {
+  cursor: pointer;
+  margin: 20px 10px;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+
+.card-country img {
+  transition: all 0.2s linear;
+}
+
+.card-country:hover {
+  transform: scale(1.01, 1.01);
+}
+
+.card-country:hover img {
+  transform: scale(1.05, 1.05);
+}
+/*# sourceMappingURL=Main.css.map */

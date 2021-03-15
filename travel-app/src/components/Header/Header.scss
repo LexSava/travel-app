@@ -1,0 +1,24 @@
+.header-block {
+  padding: 0;
+}
+.header {
+  padding: 20px 10px;
+}
+.logo-block {
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s linear;
+  h1 {
+    font-weight: 900;
+  }
+}
+.logo-block:hover {
+  transform: scale(1.02, 1.02);
+}
+.logo {
+  width: 60px;
+  border-radius: 50px;
+}
+.head {
+  margin-left: 15px;
+}

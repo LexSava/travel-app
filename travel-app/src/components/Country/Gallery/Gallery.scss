@@ -1,0 +1,42 @@
+.fullscreen-icon {
+  cursor: pointer;
+  float: right;
+
+  &_exit {
+    color: white;
+  }
+
+  &:hover {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel {
+  margin: 1%;
+  margin-bottom: 0;
+}
+
+.carousel-caption {
+  color: black;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.gallery-preview {
+  display: flex;
+  margin: 1%;
+  margin-top: 0;
+
+  &__image {
+    width: 16.66%;
+    &_current {
+      opacity: 1;
+    }
+    opacity: 0.6;
+  }
+
+  &__image:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
