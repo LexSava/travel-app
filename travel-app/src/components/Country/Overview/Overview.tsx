@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Jumbotron, Container, Image } from 'react-bootstrap';
-import './Overview.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Jumbotron, Container, Image } from "react-bootstrap";
+import "./Overview.scss";
 
 import CountryType from "./../../../types/CountryModel";
 import DateWidget from "../../DateWidget/DateWidget";
@@ -9,7 +9,7 @@ import Weather from "../../Weather/Weather";
 import Video from "../../Video/Video";
 
 type OverviewProps = {
-  countryInfo: ICountries;
+  countryInfo: any;
   conveyLanguage: string;
 };
 
@@ -32,23 +32,23 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
               conveyLanguage={conveyLanguage}
             />
           </Container>
-          <div className='country-overview__main'>
+          <div className="country-overview__main">
             <Image
-              className='country-overview__main__image'
+              className="country-overview__main__image"
               src={countryInfo.photoSrc1}
               rounded
             />
-            <div className='country-overview__main__content'>
-              <div className='country-overview__main__content__capital'>
-                <h1 className='text-primary overview-title'>
+            <div className="country-overview__main__content">
+              <div className="country-overview__main__content__capital">
+                <h1 className="text-primary overview-title">
                   {countryInfo.nameEn}
                 </h1>
-                <h2 className='text-capital'>{countryInfo.capitalEn}</h2>
+                <h2 className="text-capital">{countryInfo.capitalEn}</h2>
               </div>
             </div>
           </div>
 
-          <p className='country-overview__description'>
+          <p className="country-overview__description">
             {countryInfo.articleEn}
           </p>
           <Video videoSrc={countryInfo.videoEn} />
