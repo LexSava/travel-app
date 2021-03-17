@@ -2,11 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Container, Image } from 'react-bootstrap';
 import './Overview.scss';
 
-import { ICountries } from './../../../utils/interfaces';
-import CountryType from './../../../types/CountryModel';
-import DateWidget from '../../DateWidget/DateWidget';
-import Weather from '../../Weather/Weather';
-import Video from '../../Video/Video';
+import CountryType from "./../../../types/CountryModel";
+import DateWidget from "../../DateWidget/DateWidget";
+import ExchangeRates from "../../ExchangeRates/ExchangeRates";
+import Weather from "../../Weather/Weather";
+import Video from "../../Video/Video";
 
 type OverviewProps = {
   countryInfo: ICountries;
@@ -15,13 +15,14 @@ type OverviewProps = {
 
 const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
   return (
-    <div className='country-overview'>
-      <Jumbotron
-        fluid
-        style={{ backgroundImage: `url(${countryInfo.photoSrc1})` }}
-      >
-        <Container className='position-relative'>
-          <Container className='d-flex widget-block mb-2'>
+    <div className="country-overview">
+      <Jumbotron fluid style={{ backgroundImage: `url(${countryInfo.img})` }}>
+        <Container className="position-relative">
+          <Container className="d-flex widget-block mb-2">
+            <ExchangeRates
+              conveyLanguage={conveyLanguage}
+              countryInfo={countryInfo}
+            />
             <DateWidget
               conveyLanguage={conveyLanguage}
               countryInfo={countryInfo}
