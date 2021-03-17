@@ -10,7 +10,7 @@ interface MainProps {
 const Main: React.FC<MainProps> = (props) => {
   const cards: any = props.countrysCard.map((item: any) => {
     return (
-      <Link to={`/${item.nameEn}`} key={item._id}>
+      <Link to={`/${item.country}`} key={item.id} className="link-card-country">
         <Card
           style={{ width: '18rem' }}
           key={item._id}

@@ -26,3 +26,8 @@
 .card-country-text {
   font-weight: 600;
 }
+@media screen and (max-width: 769px) {
+  .link-card-country {
+    margin: 0 auto;
+  }
+}

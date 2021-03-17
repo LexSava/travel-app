@@ -22,3 +22,32 @@
 .head {
   margin-left: 15px;
 }
+@media screen and (max-width: 769px) {
+  .link-logo-block {
+    margin: 0 auto;
+  }
+  .frorm-block {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 579px) {
+  .form-inline {
+    button {
+      margin-top: 10px;
+    }
+  }
+  .language-select {
+    display: contents;
+    div {
+      margin-left: 10px;
+    }
+  }
+}
+@media screen and (max-width: 328px) {
+  .language-select {
+    div {
+      margin: 0 auto;
+    }
+  }
+}

@@ -54,13 +54,13 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <Container className='header-block'>
       <header className='d-flex justify-content-between flex-wrap header'>
-        <Link to='/'>
+        <Link to='/' className="link-logo-block">
           <div className='logo-block d-flex'>
             <img src={logo} alt='logo' className='logo text-warning' />
             <h1 className='head text-primary '>Travel Now</h1>
           </div>
         </Link>
-        <div className='d-flex justify-content-between flex-wrap'>
+        <div className='d-flex justify-content-between flex-wrap frorm-block'>
           <Form inline>
             <FormControl
               type='search'
@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             </Button>
           </Form>
 
-          <Form inline className='ml-5'>
+          <Form inline className='ml-5 language-select'>
             <Form.Group controlId='exampleForm.SelectCustom'>
               <Form.Control
                 as='select'

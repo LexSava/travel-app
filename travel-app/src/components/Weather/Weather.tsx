@@ -34,9 +34,9 @@ const Weather: React.FC<HeaderWeather> = (props) => {
     return <div>loading...</div>;
   }
   return (
-    <Container className='p-1 date-weather-block'>
-      <Card className='date-widget-card'>
-        <Card.Header className='text-primary font-weight-normal fw-bold'>
+    <Container className="p-1 date-weather-block mb-2">
+      <Card className="date-widget-card">
+        <Card.Header className="text-primary font-weight-normal fw-bold">
           Weather {capital}
         </Card.Header>
         <Card.Body>
