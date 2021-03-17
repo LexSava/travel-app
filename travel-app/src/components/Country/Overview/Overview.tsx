@@ -17,8 +17,16 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
     <div className="country-overview">
       <Jumbotron fluid style={{ backgroundImage: `url(${countryInfo.img})` }}>
         <Container className="position-relative">
-          <DateWidget conveyLanguage={conveyLanguage} />
-          <Weather countryInfo={countryInfo} conveyLanguage={conveyLanguage}/>
+          <Container className="d-flex widget-block mb-2">
+            <DateWidget
+              conveyLanguage={conveyLanguage}
+              countryInfo={countryInfo}
+            />
+            <Weather
+              countryInfo={countryInfo}
+              conveyLanguage={conveyLanguage}
+            />
+          </Container>
           <div className="country-overview__main">
             <Image
               className="country-overview__main__image"
