@@ -11,6 +11,11 @@ interface HeaderExchangeRates {
 const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
   const [loading, setLoading] = useState(false);
   const [course, setСourse] = useState<any>({});
+  const [courseUSD, setСourseUSD] = useState<string>(
+    "USD" + props.countryInfo.currencies[0].code
+  );
+
+  console.log(props.countryInfo);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,7 +29,14 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
       getWeather();
     }, 1000);
   }, [props.conveyLanguage]);
-  console.log(course);
+  const getCourseUSD = () => {
+    for (let key in course.quotes) {
+      if (key === courseUSD) {
+        return course.quotes[key];
+      }
+    }
+  };
+
   if (!loading) {
     return <div>loading...</div>;
   }
@@ -35,8 +47,13 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
           Exchange rates
         </Card.Header>
         <Card.Body>
-          <Card.Title>{course.quotes.USDAED}</Card.Title>
-          <Card.Text>{course.timestamp}</Card.Text>
+          <Card.Title>
+            Сurrency {props.countryInfo.currencies[0].name}
+          </Card.Title>
+          <Card.Text>
+            Exchange rate to USD {getCourseUSD()}{" "}
+            {props.countryInfo.currencies[0].code}
+          </Card.Text>
         </Card.Body>
       </Card>
     </Container>
