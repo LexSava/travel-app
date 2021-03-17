@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
       const regex: any = new RegExp(`^${inputText}`, 'gi');
-      return state.country.match(regex) || state.capital.match(regex);
+      return state.nameEn.match(regex) || state.capitalEn.match(regex);
     });
     if (inputText.length === 0) {
       matches = [];
