@@ -8,6 +8,7 @@ import Overview from './Overview/Overview';
 import Gallery from './Gallery/Gallery';
 import TravelAppService from './../../services/TravelAppService';
 import { ISights, ICountrys } from './../../utils/interfaces';
+import MapCountry from './Map/Map';
 
 import "./Country.scss";
 
@@ -56,6 +57,7 @@ const Country = ({ countries, conveyLanguage }: CountryProps): JSX.Element => {
     <div>
       {overview}
       {gallery}
+      <MapCountry />
     </div>
   );
 };
