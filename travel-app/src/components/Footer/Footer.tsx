@@ -34,13 +34,6 @@ const Footer: React.FC = () => {
           Anastasiya
         </a>
         <a
-          href="https://github.com/mrINEX"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Uladzimir
-        </a>
-        <a
           className="footer__school"
           href="https://rs.school/react/"
           target="_blank"

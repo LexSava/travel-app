@@ -9,7 +9,7 @@ import Gallery from './Gallery/Gallery';
 import TravelAppService from './../../services/TravelAppService';
 import { ISights, ICountrys } from './../../utils/interfaces';
 
-import './Country.scss';
+import "./Country.scss";
 
 interface CountryProps {
   countries: ICountrys[];
