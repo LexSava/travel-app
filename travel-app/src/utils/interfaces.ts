@@ -3,6 +3,7 @@ export interface ICountrys {
   country: string;
   capital: string;
   img: any;
+  timeZone: string;
 }
 
 export interface ISights {

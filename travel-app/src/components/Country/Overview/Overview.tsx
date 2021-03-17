@@ -4,6 +4,8 @@ import "./Overview.scss";
 
 import CountryType from "./../../../types/CountryModel";
 import DateWidget from "../../DateWidget/DateWidget";
+import Weather from "../../Weather/Weather";
+import Video from "../../Video/Video";
 
 type OverviewProps = {
   countryInfo: CountryType;
@@ -15,7 +17,16 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
     <div className="country-overview">
       <Jumbotron fluid style={{ backgroundImage: `url(${countryInfo.img})` }}>
         <Container className="position-relative">
-          <DateWidget conveyLanguage={conveyLanguage}/>
+          <Container className="d-flex widget-block mb-2">
+            <DateWidget
+              conveyLanguage={conveyLanguage}
+              countryInfo={countryInfo}
+            />
+            <Weather
+              countryInfo={countryInfo}
+              conveyLanguage={conveyLanguage}
+            />
+          </Container>
           <div className="country-overview__main">
             <Image
               className="country-overview__main__image"
@@ -44,6 +55,7 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
             40% of its total land area forested. Minsk is the country's capital
             and largest city.
           </p>
+          <Video />
         </Container>
       </Jumbotron>
       <Container></Container>
