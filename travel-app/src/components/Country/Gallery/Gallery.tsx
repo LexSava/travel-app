@@ -62,11 +62,11 @@ const Gallery = ({ sightsInfo }: GalleryProps): JSX.Element => {
           <img
             className='d-block w-100'
             src={sight.photoSrc1}
-            alt={sight.nameRu}
+            alt={sight.nameEn}
           />
           <Carousel.Caption>
-            <h3>{sight.nameRu}</h3>
-            <p>{sight.articleRu}</p>
+            <h3>{sight.nameEn}</h3>
+            <p>{sight.articleEn}</p>
           </Carousel.Caption>
         </Carousel.Item>
       );

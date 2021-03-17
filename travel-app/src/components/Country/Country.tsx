@@ -1,28 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { RouteComponentProps, useParams } from 'react-router-dom';
-
-import CountryType from './../../types/CountryModel';
+import { useParams } from 'react-router-dom';
 import Overview from './Overview/Overview';
 import Gallery from './Gallery/Gallery';
 import TravelAppService from './../../services/TravelAppService';
-import { ISights, ICountrys } from './../../utils/interfaces';
+import { ISights, ICountries } from './../../utils/interfaces';
 import MapCountry from './Map/Map';
 
-import "./Country.scss";
+import './Country.scss';
 
 interface CountryProps {
-  countries: ICountrys[];
+  countries: ICountries[];
   conveyLanguage: string;
 }
 
 const Country = ({ countries, conveyLanguage }: CountryProps): JSX.Element => {
   const [sightsInfo, setSightsInfo] = useState<ISights[] | null>(null);
   let { country } = useParams<{ country: string }>();
-  let countryInfo = countries.find(
-    (countries) => countries.country === country
-  );
+  let countryInfo = countries.find((countries) => countries.nameEn === country);
 
   const getCountrySightsApi = (): Promise<void> =>
     TravelAppService.getCountrySights(country)
@@ -46,18 +42,32 @@ const Country = ({ countries, conveyLanguage }: CountryProps): JSX.Element => {
     </div>
   );
 
+  const notFoundElement: JSX.Element = (
+    <h1>{`Oops! Country ${country} not found.`}</h1>
+  );
+
   const overview: JSX.Element =
     typeof countryInfo === 'undefined' ? (
-      <h1>{`Oops! Country ${country} not found.`}</h1>
+      notFoundElement
     ) : (
       <Overview countryInfo={countryInfo} conveyLanguage={conveyLanguage} />
+    );
+
+  const map: JSX.Element =
+    typeof countryInfo === 'undefined' ? (
+      notFoundElement
+    ) : (
+      <MapCountry
+        latlng={countryInfo.latlng}
+        coordinates={countryInfo.coordinates}
+      />
     );
 
   return (
     <div>
       {overview}
+      {map}
       {gallery}
-      <MapCountry />
     </div>
   );
 };
