@@ -1,0 +1,30 @@
+type ShowPlaceDb = {
+_id: string,
+nameRu: string,
+nameEn: string,
+nameBe: string,
+coord: string,
+articleRu: string,
+articleEn: string,
+articleBe: string,
+fullArticleRu: string,
+fullArticleEn: string,
+fullArticleBe: string,
+photoSrc1: string,
+photoSrc2: string,
+photoSrc3: string,
+buildDate: string,
+placeRu: string,
+placeBe: string,
+placeEn: string,
+siteUrl: string,
+googleMapUrl: string,
+plusCode: string,
+country: string,
+rating: number,
+views: number,
+votes: string,
+id: string
+};
+
+export default ShowPlaceDb;

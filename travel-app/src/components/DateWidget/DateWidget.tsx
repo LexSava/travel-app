@@ -2,25 +2,54 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./DateWidget.scss";
 import Moment from "react-moment";
 import moment from "moment";
+import "moment-timezone";
 import "moment/locale/ru";
 import "moment/locale/be";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Container } from "react-bootstrap";
 
 interface HeaderDateWidget {
   conveyLanguage: string;
+  countryInfo: any;
 }
 
 const DateWidget: React.FC<HeaderDateWidget> = (props) => {
-  (function setDateTimezone() {
-    return moment.locale(props.conveyLanguage);
-  })();
+  const [loading, setLoading] = useState(false);
+  const [widgetHeader, setWidgetHeader] = useState<string>("");
 
+  useEffect(() => {
+    if (props.conveyLanguage === "en") {
+      return setWidgetHeader(`The local time ${props.countryInfo.capitalEn}`);
+    } else if (props.conveyLanguage === "ru") {
+      return setWidgetHeader(`Местное время ${props.countryInfo.capitalRu}`);
+    } else {
+      return setWidgetHeader(`Мясцовы час ${props.countryInfo.capitalBe}`);
+    }
+  }, [props.conveyLanguage]);
+  useEffect(() => {
+    function setDateTimezone() {
+      return moment.locale(props.conveyLanguage);
+    }
+    setDateTimezone();
+  }, [props.conveyLanguage]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      function setDateTimezone() {
+        return moment.tz.setDefault(props.countryInfo.timeZone);
+      }
+      setDateTimezone();
+      setLoading(true);
+    }, 1000);
+  }, []);
+  if (!loading) {
+    return <div>loading...</div>;
+  }
   return (
     <Container className="p-1 date-widget-block">
       <Card className="date-widget-card">
         <Card.Header className="text-primary font-weight-normal">
-          Time in the capital
+          {widgetHeader}
         </Card.Header>
         <Card.Body>
           <Card.Title>

@@ -1,4 +1,4 @@
-import { ISights } from './../utils/interfaces';
+import { ISights, ICountries } from './../utils/interfaces';
 
 export default class TravelAppService {
   static readonly apiBase: string = 'http://travelapp.tk:3000/';
@@ -18,5 +18,10 @@ export default class TravelAppService {
       `showplaces/country/${country}`
     );
     return sights;
+  }
+
+  static async getCountries(): Promise<ICountries[]> {
+    const countries: Promise<ICountries[]> = await this.getResource('');
+    return countries;
   }
 }
