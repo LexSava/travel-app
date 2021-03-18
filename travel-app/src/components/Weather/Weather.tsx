@@ -15,7 +15,6 @@ const Weather: React.FC<HeaderWeather> = (props) => {
   const [loading, setLoading] = useState(false);
   const [widgetHeader, setWidgetHeader] = useState<string>("");
   const [windText, setWindText] = useState<string>("");
-  console.log(props.countryInfo);
 
   useEffect(() => {
     if (props.conveyLanguage === "en") {

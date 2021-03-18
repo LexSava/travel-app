@@ -93,7 +93,7 @@ const Main: React.FC<HeaderMain> = (props) => {
         }
       })
     );
-  }, [props.conveyLanguage]);
+  }, [props]);
   return (
     <Container className="main d-flex justify-content-between flex-wrap ">
       {cards}

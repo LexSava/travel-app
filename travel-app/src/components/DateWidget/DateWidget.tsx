@@ -17,8 +17,6 @@ const DateWidget: React.FC<HeaderDateWidget> = (props) => {
   const [loading, setLoading] = useState(false);
   const [widgetHeader, setWidgetHeader] = useState<string>("");
 
-  console.log(props.countryInfo);
-
   useEffect(() => {
     if (props.conveyLanguage === "en") {
       return setWidgetHeader(`The local time ${props.countryInfo.capitalEn}`);
