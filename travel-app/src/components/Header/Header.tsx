@@ -30,12 +30,13 @@ const Header: React.FC<HeaderProps> = (props) => {
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
       const regex: any = new RegExp(`^${inputText}`, "gi");
-      return (
-        state.nameEn.match(regex) ||
-        state.capitalEn.match(regex) ||
-        state.nameRu.match(regex) ||
-        state.capitalRu.match(regex)
-      );
+      if (language === "en") {
+        return state.nameEn.match(regex) || state.capitalEn.match(regex);
+      } else if (language === "ru") {
+        return state.nameRu.match(regex) || state.capitalRu.match(regex);
+      } else {
+        return state.nameBe.match(regex) || state.capitalBe.match(regex);
+      }
     });
     if (inputText.length === 0) {
       matches = [];
