@@ -56,7 +56,7 @@ function App() {
             <Country countries={countries} conveyLanguage={selectedLanguage} />
           </Route>
           <Route path='/'>
-            <Main countrysCard={countrysCard} />
+            <Main countrysCard={countrysCard} conveyLanguage={selectedLanguage} />
           </Route>
         </Switch>
         <Footer />

@@ -14,11 +14,22 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [inputText, setInputText] = useState<string>("");
+  const [searchText, setSearchText] = useState<string>("");
   const [language, setLanguage] = useLocalStorage("en", "");
+
+  useEffect(() => {
+    if (language === "en") {
+      return setSearchText("Search");
+    } else if (language === "ru") {
+      return setSearchText("Поиск");
+    } else {
+      return setSearchText("Пошук");
+    }
+  }, [language]);
 
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
-      const regex: any = new RegExp(`^${inputText}`, 'gi');
+      const regex: any = new RegExp(`^${inputText}`, "gi");
       return state.nameEn.match(regex) || state.capitalEn.match(regex);
     });
     if (inputText.length === 0) {
@@ -64,7 +75,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           <Form inline>
             <FormControl
               type="search"
-              placeholder="Search"
+              placeholder={searchText}
               className="mr-sm-2"
               autoFocus
               value={inputText}
@@ -73,7 +84,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               onKeyPress={keyPressHandler}
             ></FormControl>
             <Button variant="outline-info" onClick={inputLog}>
-              Search
+              {searchText}
             </Button>
           </Form>
 
