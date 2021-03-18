@@ -34,7 +34,7 @@ const Country = ({ countries, conveyLanguage }: CountryProps): JSX.Element => {
   });
 
   const gallery: JSX.Element = sightsInfo ? (
-    <Gallery sightsInfo={sightsInfo} />
+    <Gallery sightsInfo={sightsInfo} conveyLanguage={conveyLanguage}/>
   ) : (
     <div className='spinner-wrapper'>
       <Spinner animation='border' variant='primary' />

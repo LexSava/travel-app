@@ -26,6 +26,9 @@
 .card-country-text {
   font-weight: 600;
 }
+.link-card-country:hover {
+  text-decoration: none;
+}
 @media screen and (max-width: 769px) {
   .link-card-country {
     margin: 0 auto;
