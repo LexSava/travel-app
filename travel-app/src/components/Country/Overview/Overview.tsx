@@ -19,7 +19,7 @@ const Overview = ({ countryInfo, conveyLanguage }: OverviewProps) => {
   const [capitalName, setCapitalName] = useState<string>("");
   const [countryTextInfo, setCountryTextInfo] = useState<string>("");
   const [countryVideoInfo, setCountryVideoInfo] = useState<string>("");
-
+  window.scrollTo(0, 0);
   useEffect(() => {
     if (conveyLanguage === "en") {
       setCountryName(countryInfo.nameEn);

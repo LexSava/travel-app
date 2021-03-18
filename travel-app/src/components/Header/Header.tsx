@@ -30,7 +30,12 @@ const Header: React.FC<HeaderProps> = (props) => {
   const inputLog = (): void => {
     let matches: any = props.countrys.filter((state: any) => {
       const regex: any = new RegExp(`^${inputText}`, "gi");
-      return state.nameEn.match(regex) || state.capitalEn.match(regex);
+      return (
+        state.nameEn.match(regex) ||
+        state.capitalEn.match(regex) ||
+        state.nameRu.match(regex) ||
+        state.capitalRu.match(regex)
+      );
     });
     if (inputText.length === 0) {
       matches = [];
@@ -60,6 +65,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     if (inputText.length === 0) {
       props.onSearch(props.countrys);
     }
+    inputLog();
   }, [inputText]);
 
   return (
