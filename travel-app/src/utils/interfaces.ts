@@ -36,4 +36,6 @@ export interface ISights {
   articleBe: string;
   articleEn: string;
   photoSrc1: string;
+  votes: string;
+  rating: number;
 }

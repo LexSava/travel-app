@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Country from "./components/Country/Country";
+import Register from "./components/User/Register";
 import Footer from "./components/Footer/Footer";
 import { ICountries } from "./utils/interfaces";
 import TravelAppService from "./services/TravelAppService";
@@ -60,6 +61,9 @@ function App() {
               countrysCard={countrysCard}
               conveyLanguage={selectedLanguage}
             />
+          </Route>
+          <Route path="/user/register">
+            <Register conveyLanguage={selectedLanguage} />
           </Route>
         </Switch>
         <Footer />
