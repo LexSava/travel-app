@@ -1,5 +1,5 @@
-import "./Gallery.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./Gallery.scss";
 import React, { useState, useEffect } from "react";
 
 import { Carousel, Container, Image } from "react-bootstrap";

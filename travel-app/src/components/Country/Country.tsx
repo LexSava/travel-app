@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Country.scss';
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
@@ -9,6 +8,7 @@ import TravelAppService from './../../services/TravelAppService';
 import { ISights, ICountries } from './../../utils/interfaces';
 import MapCountry from './Map/Map';
 
+import './Country.scss';
 
 interface CountryProps {
   countries: ICountries[];

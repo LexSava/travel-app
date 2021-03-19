@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
-import React, { useState, useEffect } from "react";
 import { Button, Form, FormControl, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.jpg";

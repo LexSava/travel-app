@@ -1,4 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Container, Image } from "react-bootstrap";
+import "./Overview.scss";
 import React, { useEffect, useState } from "react";
 import { ICountries } from "./../../../utils/interfaces";
 import CountryType from "./../../../types/CountryModel";
@@ -6,8 +8,6 @@ import DateWidget from "../../DateWidget/DateWidget";
 import Weather from "../../Weather/Weather";
 import ExchangeRates from "../../ExchangeRates/ExchangeRates";
 import Video from "../../Video/Video";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Overview.scss";
 
 type OverviewProps = {
   countryInfo: ICountries;

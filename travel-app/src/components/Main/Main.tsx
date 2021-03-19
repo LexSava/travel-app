@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Main.scss";
 import { Container, Card, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Main.scss";
 
 interface HeaderMain {
   countrysCard: any;
