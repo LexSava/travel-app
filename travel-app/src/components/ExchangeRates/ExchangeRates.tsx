@@ -17,18 +17,19 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
   const [widgetHeader, setWidgetHeader] = useState<string>("");
   const [currencyTitle, setCurrencyTitle] = useState<string>("");
   const [exchangeRate, setExchangeRate] = useState<string>("");
+  console.log(props.countryInfo);
 
   useEffect(() => {
     if (props.conveyLanguage === "en") {
-      setCurrencyTitle("Сurrency - Belarusian ruble");
+      setCurrencyTitle("Сurrency - ");
       setExchangeRate("Exchange rate to USD");
       return setWidgetHeader("Exchange rates");
     } else if (props.conveyLanguage === "ru") {
-      setCurrencyTitle("Валюта - Белорусский рубль");
+      setCurrencyTitle("Валюта - ");
       setExchangeRate("Курс обмена к доллару США");
       return setWidgetHeader("Обменные курсы");
     } else {
-      setCurrencyTitle("Валюта - Беларускі рубель");
+      setCurrencyTitle("Валюта - ");
       setExchangeRate("Курс абмену да даляра CША");
       return setWidgetHeader("Курсы валют");
     }
@@ -64,7 +65,10 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
           {widgetHeader}
         </Card.Header>
         <Card.Body>
-          <Card.Title>{currencyTitle}</Card.Title>
+          <Card.Title>
+            {currencyTitle}
+            {props.countryInfo.currencies[0].code}
+          </Card.Title>
           <Card.Text className="exchangeRate-text">{exchangeRate}</Card.Text>
           <Card.Text>
             {getCourseUSD()} - {props.countryInfo.currencies[0].code}
