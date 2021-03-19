@@ -4,19 +4,19 @@ import ReactPlayer from "react-player";
 import { SourceProps } from "react-player/base";
 import { ArrowsFullscreen, FullscreenExit } from "react-bootstrap-icons";
 
+
 type VideoProps = {
   videoSrc: string;
 };
 
 const Video = ({ videoSrc }: VideoProps) => {
-  const [fullScreen, setFullScreen] = useState<boolean>(false);
 
+  const [fullScreen, setFullScreen] = useState<boolean>(false);
   const playerConfig = {
     youtube: {
       playerVars: { showinfo: 0 },
     },
   };
-
   const openFullscreen = (e: any): void => {
     const galleryElement: any = e.target.parentElement;
     if (galleryElement.requestFullscreen) {

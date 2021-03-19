@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Country from "./components/Country/Country";
 import Register from "./components/User/Register";
+
 import Footer from "./components/Footer/Footer";
 import { ICountries } from "./utils/interfaces";
 import TravelAppService from "./services/TravelAppService";
