@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Search Should render search with img 1`] = `
-<select
-  className="language-select"
-  onChange={[Function]}
-  value="ru_RU"
-/>
-`;
