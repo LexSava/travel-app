@@ -1,0 +1,89 @@
+@import '../../variables.scss';
+
+header {
+  margin-bottom: 20px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  .logo_title {
+    padding: 0 10px;
+    color: transparent;
+    background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 80px;
+    font-weight: 800;
+
+    text-align: center;
+    letter-spacing: -8px;
+  }
+
+  .login-buttons {
+    margin: auto 0;
+
+    .avatar-wrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-top: -5px;
+      overflow: hidden;
+      display: inline-block;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .login-name {
+      display: inline;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin: 20px auto 0 auto;
+    }
+
+    .login-button {
+      height: 36px;
+      padding: 0 10px;
+      border: none;
+      border-radius: 18px;
+      background-color: $color-focus;
+      color: $color-text-light;
+      text-transform: uppercase;
+      margin-left: 10px;
+
+      &:hover {
+        filter: brightness(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header-additions {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    @media screen and (max-width: 1400px) {
+      flex-direction: column;
+      justify-content: space-around;
+    align-items: flex-end;
+    }
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

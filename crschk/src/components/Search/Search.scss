@@ -1,0 +1,68 @@
+@import '../../variables.scss';
+
+.search-form {
+  display: flex;
+  position: relative;
+  width: 280px;
+  height: 35px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 20px auto;
+  }
+
+  &--input {
+    width: 100%;
+    background-color: $color-bg-input;
+
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+    border: none;
+
+    font-size: 18px;
+    padding: 0 30px 0 15px;
+
+    &:focus {
+      outline: none;
+      background-color: rgb(246, 246, 246);
+    }
+  }
+
+  &--cross {
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 45px;
+    width: 12px;
+
+    &:hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
+  &--button {
+    border-bottom-right-radius: 18px;
+    border-top-right-radius: 18px;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    background-color: $color-focus;
+
+    img {
+      width: 14px;
+      transform: translateX(-2px);
+      filter: invert(1);
+    }
+
+    &:hover{
+      filter: saturate(0.7);
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

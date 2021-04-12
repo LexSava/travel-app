@@ -1,0 +1,23 @@
+{
+  "name": "travel-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "client-install": "npm install --prefix frontend",
+    "client": "npm start --prefix frontend",
+    "server": "npm run start:dev --prefix api",
+    "start": "npm start --prefix api",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix api && npm run build --prefix api"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "engines": {
+    "node": "12.13.1"
+  },
+  "dependencies": {
+    "react-draggable": "^4.4.3"
+  }
+}

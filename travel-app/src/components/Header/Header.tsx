@@ -5,7 +5,7 @@ import { Button, Form, FormControl, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.jpg";
 import useLocalStorage from "../../hooks/useLocalStorage";
-
+// import Register from "./components/User/Register";
 interface HeaderProps {
   onSearch(text: string): void;
   onSelectedLanguage(val: string): void;
@@ -15,15 +15,19 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (props) => {
   const [inputText, setInputText] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
+  const [loginText, setLoginText] = useState<string>("");
   const [language, setLanguage] = useLocalStorage("en", "");
 
   useEffect(() => {
     if (language === "en") {
-      return setSearchText("Search");
+      setSearchText("Search");
+      setLoginText("Register/Login");
     } else if (language === "ru") {
-      return setSearchText("Поиск");
+      setSearchText("Поиск");
+      setLoginText("Регистрация / Войти");
     } else {
-      return setSearchText("Пошук");
+      setSearchText("Пошук");
+      setLoginText("Рэгiстрацыя / Увайсцi");
     }
   }, [language]);
 
@@ -44,6 +48,37 @@ const Header: React.FC<HeaderProps> = (props) => {
       props.onSearch(matches);
     }
   };
+
+  const openSignupForm = () => {
+    dispatch({
+      type: actions.SET_AUTHFORM,
+      payload: { isFormOpen: true, isSignup: true },
+    });
+  };
+
+  // const openSigninForm = () => {
+  //   dispatch({
+  //     type: actions.SET_AUTHFORM,
+  //     payload: { isFormOpen: true, isSignup: false },
+  //   });
+  // };
+
+  const setUser = (user) => {
+    dispatch({ type: actions.SET_USER, user: user });
+  };
+  const closeAuthForm = (e) => {
+    if (!e) {
+      dispatch({
+        type: actions.SET_AUTHFORM,
+        payload: { isFormOpen: false }
+      });
+    } else if (e.target === e.currentTarget) {
+      dispatch({
+        type: actions.SET_AUTHFORM,
+        payload: { isFormOpen: false }
+      });
+    }
+  };  
 
   const changeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -70,7 +105,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   }, [inputText]);
 
   return (
-    <Container className="header-block">
+      <Container className="header-block">
       <header className="d-flex justify-content-between flex-wrap header">
         <Link to="/" className="link-logo-block">
           <div className="logo-block d-flex">
@@ -79,7 +114,12 @@ const Header: React.FC<HeaderProps> = (props) => {
           </div>
         </Link>
         <div className="d-flex justify-content-between flex-wrap frorm-block">
-          <Form inline>
+        <Form inline>
+        <Button className="login-button btn btn-primary" 
+                type="button" 
+                onClick={openSignupForm}>
+          { loginText }
+        </Button>
             <FormControl
               type="search"
               placeholder={searchText}
@@ -94,7 +134,6 @@ const Header: React.FC<HeaderProps> = (props) => {
               {searchText}
             </Button>
           </Form>
-
           <Form inline className="ml-5 language-select">
             <Form.Group controlId="exampleForm.SelectCustom">
               <Form.Control
@@ -110,6 +149,10 @@ const Header: React.FC<HeaderProps> = (props) => {
             </Form.Group>
           </Form>
         </div>
+        { Register.isFormOpen &&
+        <Register isSignup={Register.isSignup} 
+        setUser={setUser} 
+        closeForm={closeAuthForm} />}
       </header>
     </Container>
   );

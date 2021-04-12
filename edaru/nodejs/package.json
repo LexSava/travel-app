@@ -1,0 +1,9 @@
+{
+    "name": "mongoapp",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "^4.16.0",
+        "body-parser": "^1.18.0",
+        "mongodb": "^3.1.0"
+    }
+}

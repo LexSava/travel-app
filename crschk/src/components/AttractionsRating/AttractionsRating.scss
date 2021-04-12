@@ -1,0 +1,63 @@
+@import '../../variables.scss';
+
+.attractions-rating__my-rating_point {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+}
+
+.attractions-rating__point_selected {
+  background-image: url('../../assets/img/star-selected.png');
+}
+
+.attractions-rating__point_disabled {
+  background-image: url('../../assets/img/star.png');
+}
+
+.attractions-rating {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    height: 36px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 18px;
+    background-color: $color-focus;
+    color: $color-text-light;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &:hover {
+      filter: brightness(1.2);
+      cursor: pointer;
+    }
+  }
+}
+
+.attractions-rating__my-rating{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button__show-all-ratings {
+  height: 36px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 18px;
+  background-color: $color-focus;
+  color: $color-text-light;
+  text-transform: uppercase;
+  margin: 20px auto;
+  display: block;
+
+  &:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+  }
+}

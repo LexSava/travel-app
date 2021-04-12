@@ -37,7 +37,7 @@ const MapCountry = ({ latlng, coordinates }: MapCountryProps): JSX.Element => {
             options={{
               fillColor: "#00FF00",
               strokeColor: "#0000FF",
-              opacity: 0.5,
+              opacity: 0.2,
               strokeWidth: 5,
               strokeStyle: "shortdash",
             }}

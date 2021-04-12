@@ -1,0 +1,291 @@
+@import "../common-scss/reset-css.scss";
+@import "../common-scss/normalize-css.scss";
+@import "../common-scss/scroll.scss";
+@import "header/scss/header.scss";
+// @import "footer/scss/footer.scss";
+@import "menu/scss/menu.scss";
+@import "ingredients/scss/ingredients.scss";
+@import "export/scss/export.scss";
+@import "family/scss/family.scss";
+@import "planner/scss/planner.scss";
+@import "receipts/scss/receipts.scss";
+@import "storages/scss/storages.scss";
+
+
+$hoverColor: rgb(0,50,255);
+$backgroundDark: rgb(49, 49, 49);
+$backgroundLight: rgb(186, 216, 186); 
+$colorDark: rgb(229, 229, 229); 
+$colorLight: rgb(29, 29, 29); 
+$backgroundColor: $backgroundLight;
+$сolor: $colorLight;
+
+%activeWrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "header"
+    "content"
+}
+
+*::selection {
+  background: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.light_mode {
+  $backgroundColor: $backgroundLight;
+  background-color: $backgroundColor;
+  $color: $colorLight;
+  color: $color;
+
+  .menu .tabs .active-tab {
+  background-color: $backgroundLight;
+  }
+}
+
+.dark_mode {
+  $backgroundColor: $backgroundDark;
+  background-color: $backgroundColor;
+  $color: $colorDark;
+  color: $color;
+
+  .menu .tabs .active-tab {
+  background-color: $backgroundDark;
+  }
+}
+
+  .menu .tabs .active-tab {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  }
+
+.loading {
+  width: 100%;
+  height: 150px;
+  /* align-self: stretch; */
+  background: url(../assets/images/22.gif) no-repeat center center;
+}
+
+[id="root"] {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  // gap: 5px;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 100px auto;
+  // grid-template-areas:
+  //   "menu header"
+  //   "menu family"
+  //   // "footer footer footer footer footer footer"
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000003a;
+  transition: opacity 0.2s ease;
+}
+
+.modal {
+  position: fixed;
+  left: 125px;
+  bottom: 95vh;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: inherit;
+  border-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px 3px;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 85vw;
+  height: 90vh;
+  overflow: scroll;
+  z-index: 5;
+}
+
+.modal button {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px #0000003a;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.562);
+  z-index: 100;
+}
+
+.content {
+  grid-area: content;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons {
+  grid-area: buttons;
+  justify-self: end;
+}
+
+.family ,
+.storages, 
+.planner, 
+.receipts, 
+.ingredients, 
+.exports {
+  text-align: center;
+  // border: 1px solid grey;
+  border-radius: 5px;
+}
+
+  .family-header,
+  .storages-header,
+  .planner-header,
+  .receipts-header,
+  .ingredients-header,
+  .export-header {
+  text-align: left;
+  margin: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button {
+  color: white;
+  width: 100px;
+  height: 30px;
+  background-color: #508150;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.next-button:hover {
+  background-color: #306130;
+  cursor: pointer;
+}
+
+.next-button:active {
+  background-color: #9DBA96;
+}
+
+.mode_family {
+  grid-template-areas:
+    "menu header"
+    "menu family";
+    // "footer footer footer footer footer footer"
+  
+  .storages,
+  .planner,
+  .receipts,
+  .ingredients,
+  .export {
+    display: none;
+  }
+}
+
+.mode_storages {
+
+grid-template-areas:
+    "menu header"
+    "menu storages";
+  
+  .family,
+  .planner,
+  .receipts,
+  .ingredients,
+  .export {
+    display: none;
+  }
+}
+
+.mode_planner {
+
+  grid-template-areas:
+    "menu header"
+    "menu planner";
+    // "footer footer footer footer footer footer"
+  
+  .family,
+  .storages,
+  .receipts,
+  .ingredients,
+  .export {
+    display: none;
+  }
+}
+
+.mode_receipts {
+  grid-template-areas:
+    "menu header"
+    "menu receipts";
+    // "footer footer footer footer footer footer"
+
+  .family,
+  .storages,
+  .planner,
+  .ingredients,
+  .export {
+    display: none;
+  }
+}
+
+.mode_ingredients {
+  grid-template-areas:
+    "menu header"
+    "menu ingredients";
+    // "footer footer footer footer footer footer"
+
+  .family,
+  .storages,
+  .planner,
+  .receipts,
+  .export {
+    display: none;
+  }
+}
+
+.mode_export {
+  grid-template-areas:
+    "menu header"
+    "menu export";
+    // "footer footer footer footer footer footer"
+
+  .family,
+  .storages,
+  .planner,
+  .receipts,
+  .ingredients {
+    display: none;
+  }
+}

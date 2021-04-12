@@ -26,6 +26,12 @@
 .link-logo-block:hover {
   text-decoration: none;
 }
+
+.login-button {
+  align-items: center;
+  margin: 10px 10px;
+}
+
 @media screen and (max-width: 769px) {
   .link-logo-block {
     margin: 0 auto;

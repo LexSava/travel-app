@@ -1,0 +1,23 @@
+{
+  "name": "2048-dev",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "matrix-rotate": "^0.0.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-full-screen": "^1.0.1",
+    "react-fullscreen-crossbrowser": "^1.1.0",
+    "react-scripts": "1.1.1",
+    "styled-components": "^3.2.3",
+    "use-dark-mode": "^2.3.1",
+    "use-sound": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

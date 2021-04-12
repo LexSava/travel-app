@@ -1,0 +1,20 @@
+[
+  {
+    "countriID": "qw12we12",
+    "users": [
+      {
+        "userID": "qw12we12",
+        "score": "2"
+      }
+    ]
+  },
+  {
+    "countriID": "7788test",
+    "users": [
+      {
+        "userID": "qw12we12",
+        "score": "2"
+      }
+    ]
+  }
+]

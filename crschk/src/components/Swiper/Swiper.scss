@@ -1,0 +1,35 @@
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
+@import '../../variables.scss';
+
+.raiting-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.raiting-block__stars {
+  display: flex;
+}
+
+.image-gallery {
+  margin: 20px auto;
+  width: 60%;
+
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  &-svg {
+    &:hover {
+      stroke: $color-focus;
+    }
+  }
+
+  .image-gallery-content:not(.fullscreen) .image-gallery-slide .image-gallery-image {
+    max-height: 450px;
+  }
+}

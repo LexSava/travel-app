@@ -1,0 +1,41 @@
+@import '../../variables.scss';
+
+.country-promo {
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
+}
+
+.country-promo__wrapper {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0;
+  font-size: 18px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.card__subtitle {
+  margin-top: 20px;
+}
+
+.country-promo__card {
+  width: 70%;
+  background: $color-bg-card;
+  padding: 30px;
+  margin-right: 20px;
+  backdrop-filter: blur(10px);
+  text-align: justify;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+}

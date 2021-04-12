@@ -1,0 +1,64 @@
+{
+  "name": "travel-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p -r start:frontend start:backend",
+    "build": "webpack",
+    "start:backend": "(cd backend/ & npm start)",
+    "start:frontend": "webpack-dev-server --open",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "6.4.1",
+    "css-loader": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-image-gallery": "^1.0.9",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-yandex-maps": "^4.6.0",
+    "redux": "^4.0.5",
+    "sass": "^1.32.8",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^2.0.0",
+    "swiper": "^6.5.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@types/jest": "^26.0.20",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "babel-jest": "^26.6.3",
+    "enzyme": "^3.11.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "node-fetch": "2.6.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "prettierPath": "prettier"
+  }
+}

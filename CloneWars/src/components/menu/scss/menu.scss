@@ -1,0 +1,121 @@
+.menu {
+  grid-area: menu;
+  text-align: center;
+  background-color: #3B5337;
+  color: #F9F9F9;
+  display: grid;
+  gap: 5px;
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "header"
+    "tabs"
+    "buttons";
+
+  *::selection {
+    background: none;  
+  }
+
+  .menu-header{
+    grid-area: header;
+    font-size: 14px;
+    text-align: left;
+    line-height: 30px;
+    margin: 5px;
+    max-width: 100px;
+  }
+
+  .tabs{
+    grid-area: tabs;
+
+    .tab { 
+    height: 9vh;
+    width: 100px;
+    }
+    
+    .tab-family{
+    background: url(../assets/images/familySVG.svg) no-repeat center center;
+    }
+    .tab-storages{
+    background: url(../assets/images/shelf-shelves.svg) no-repeat center center;
+    }
+    .tab-planner{
+    background: url(../assets/images/planner.svg) no-repeat center center;
+    }
+    .tab-receipts{
+    background: url(../assets/images/receipts.svg) no-repeat center center;
+    }
+    .tab-ingredients{
+    background: url(../assets/images/ingredients.svg) no-repeat center center;
+    }
+    .tab-export{
+    background: url(../assets/images/export.svg) no-repeat center center;
+    }
+
+    .tabi { 
+    height: 50px;
+    width: 100px;
+    background-size: contain;
+    position: relative;
+    top: 10px;
+    }
+
+    .tab:hover { 
+      background-color: #535353;
+      cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+  }
+
+  .buttons{
+    grid-area: buttons;
+    align-items: center;
+    font-size: 1.5em;
+    transition: all 0.3s;
+    align-self: self-end;
+
+    div {
+      background: inherit;
+      color: inherit;
+    }
+
+    .footer:hover,
+    .theme:hover,
+    .lang:hover {
+      cursor: pointer;
+      color: royalblue;
+      }
+
+    .footer:active,
+    .theme:active,
+    .lang:active {
+      cursor: pointer;
+      color: rosybrown;
+      }
+
+    .themes,
+    .langs {
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+  .footer-switcher {
+    width: 100px;
+    height: 50px;
+  }
+  
+  .footer-hidden,
+  .themes-hidden,
+  .langs-hidden {
+      display: none;
+  }
+  .footer,
+  .theme,
+  .lang {
+    margin: 8px 8px;
+  }
+
+}

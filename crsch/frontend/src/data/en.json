@@ -1,0 +1,172 @@
+{
+  "countries": [
+    {
+      "lang": 1,
+      "id": 1,
+      "name": "Turkey",
+      "capital": "Ankara",
+      "smallImageUrl": "turkey.jpg",
+      "imageUrl": "turkey_full.jpg",
+      "description": "What can surprise Turkey? If you think that apart from beaches and all-inclusive hotels there is nothing attractive, then you do not know the real Turkey - with magnificent Istanbul, which was once Byzantine Constantinople, ancient Christian monuments and amazing natural wonders, which are a must worth seeing. The Republic of Turkey is located at the crossroads of East and West. Has access to four seas. This country has stunning nature, architecture, history. For tourists and travelers, Turkey is interesting as a place where you can enjoy the sun, beaches, healing springs, go skiing, and go mountaineering.",
+      "sightseeings": [
+        {
+          "imageUrl": "maidens_tower.jpg",
+          "name": "Maidens Tower",
+          "description": "Located in the Asian part of Istanbul on a small island of the Bosphorus Strait in the Uskudar region. During the Ottoman Empire, the tower mainly served as a beacon that showed ships the way at night and even during the day in foggy weather."
+        },
+        {
+          "imageUrl": "hagia_sophia.jpg",
+          "name": "Hagia Sophia",
+          "description": "Former Patriarchal Orthodox Cathedral located in the historical center of modern Istanbul. The symbol of the Golden age of Byzantium. In 1453, after the capture of Constantinople by the Ottomans, the cathedral was turned into a mosque, and in 1935 it acquired the status of a museum."
+        },
+        {
+          "imageUrl": "efes.jpg",
+          "name": "Efes",
+          "description": "The old antique city, from which many buildings have been well preserved to this day. The city is famous primarily for the Temple of Artemis, which is one of the seven wonders of the ancient world."
+        },
+        {
+          "imageUrl": "blue_lagune.jpg",
+          "name": "Blue lagune",
+          "description": "The Blue Lagoon is a very beautiful and famous place in the whole country. The Blue Lagoon is located next to the small village of Oludeniz in Turkey on the shores of the two seas of the Mediterranean and the Aegean."
+        },
+        {
+          "imageUrl": "cappadocia.jpg",
+          "name": "Cappadocia",
+          "description": "Semi-desert region in central Turkey. It is known for its magical chimneys - tall, cone-shaped rock formations."
+        },
+        {
+          "imageUrl": "pamukkale.jpg",
+          "name": "Pamukkale",
+          "description": "Famous for its thermal springs located on terraces of white limestone. Here you can also see the ruins of the ancient spa town of Hierapolis during the Roman Empire."
+        }        
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=6nGoj2TVe2I" 
+    },
+    
+    {
+      "lang": 1,
+      "id": 2,
+      "name": "Spain",
+      "capital": "Madrid",
+      "smallImageUrl": "spain.jpg",
+      "imageUrl": "spain_full.jpg",
+      "description": "Spain is a European country located on the Iberian Peninsula. The territory of Spain is divided into 17 autonomous regions. The capital of the country, Madrid, houses the Royal Palace and the Prado Museum, which houses works of European masters. In Segovia, you can visit the medieval castle (Alcazar) and see the well-preserved Roman aqueduct. Barcelona is the capital of the autonomous community of Catalonia. The appearance of this city is determined by the numerous fanciful creations of the architect Antoni Gaudí, including the Sagrada Familia. It is washed by the Atlantic Ocean in the north and west, the Mediterranean Sea in the south and east. The average height of the surface of Spain is 650 m above sea level; it is one of the most mountainous countries in Europe.",
+      "sightseeings": [
+        {
+          "imageUrl": "alhambra.jpg",
+          "name": "Alhambra",
+          "description": "An architectural and park complex located on a hilly terrace in the eastern part of the city of Granada in southern Spain. The main development was received during the reign of the Muslim dynasty of Nasrid."
+        },
+        {
+          "imageUrl": "malaga.jpg",
+          "name": "Malaga",
+          "description": "A port city in the Costa del Sol region of southern Spain, renowned for its multi-storey hotel complexes that open directly onto light-sand beaches. Two huge fortresses rise above the modern buildings of the city: the alcazaba of Malaga and Gibralfaro."
+        },
+        {
+          "imageUrl": "montserrat.jpg",
+          "name": "Montserrat",
+          "description": "Benedictine monastery, spiritual symbol and religious center of Catalonia and a center of pilgrimage for Catholics from all over the world. The natural complex adjacent to the monastery has been declared a national park of Catalonia."
+        },
+        {
+          "imageUrl": "park_guell.jpg",
+          "name": "Park Guell",
+          "description": "A park in the upper part of Barcelona, ​​created by Antoni Gaudi in 1900-1914. The park was conceived by Eusebi Güell as a green residential area in the style of the urban garden city concept that was fashionable in England at the time."
+        },
+        {
+          "imageUrl": "sagrada_familia.jpg",
+          "name": "Sagrada Familia",
+          "description": "There is a building in Barcelona that has been erecting for 120 years with minor interruptions. Founded in 1882, the grandiose Atonement Church of the Holy Family (Sagrada Familia) is gradually taking on the appearance of a completed creation. The way it was conceived by one of the greatest architects of the 20th century, Antoni Gaudi."
+        },
+        {
+          "imageUrl": "spain_square.jpg",
+          "name": "Spain Square",
+          "description": "One of the most impressive places in Seville. This architectural ensemble is located in the Maria Luisa Park and amazes with its grandeur and beauty. It was conceived as the centerpiece of the 1929 Ibero-American Exhibition."
+        }        
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=I78hhm620zc" 
+    },
+    
+    {
+      "id": 5,
+      "name": "China",
+      "capital": "Beijing",
+      "smallImageUrl": "china/china.jpg",
+      "description": "China is a very multifaceted country, and resorts in China can offer visitors a wide variety of leisure activities. You will find ski resorts in Harbin, the island of Hainan will offer you an excellent and rather economical beach holiday, and you can get acquainted with Tibetan culture and Buddhism in Lhasa. 99 cities of great cultural and historical significance, 750 unique cultural monuments under state protection, as well as 119 landscape sites are open to tourists in China.",
+      "sightseeings": [
+        {
+          "imageUrl": "china/1_ the_great_wall_of_china.jpg",
+          "name": "Great Wall of China (North China)",
+          "description": "The Great Wall of China is a grandiose monument of antiquity and is considered the longest structure in the world built for defense purposes. It passes through North China for almost 9 thousand kilometers. According to other sources, if we take into account all the turns and bends of the wall, its length will be about 21 thousand kilometers. The height of the building is about 7 meters. And the width is 6 meters. From the inside, the wall is protected by a special barrier 0.9 meters high."
+        },
+        {
+          "imageUrl": "china/2_nanwan_monkey_island.jpg",
+          "name": "Monkey Island Reserve (Sanya)",
+          "description": "Monkey Island Nature Reserve covers an area of ​​about a thousand hectares and is home to 2000 monkeys. This is the only sanctuary in which monkeys live in their natural environment, but at the same time freely and fearlessly cooperate with visitors. It is not allowed to feed the monkeys yourself here - you can only buy food and give it to the reserve servant, so that he feeds them from his own hands in front of your eyes."
+        },
+        {
+          "imageUrl": "china/3_tianya_haijiao_park.jpg",
+          "name": "End of the World Natural Park (Hainan Island)",
+          "description": "This remarkable beauty place is located right on the seashore, at an altitude of 200 meters, and occupies only 2.5 square kilometers in area. The local landscapes are characterized by a special beauty - high cliffs of intricate shapes frame the blue sea, stormy waves break on the steep banks, everywhere green trees."
+        },
+        {
+          "imageUrl": "china/4_mount_lotus.jpg",
+          "name": "Lianhuashan Lotus Mountains (20 km from Guangzhou)",
+          "description": "Once upon a time in ancient times, these hills were called the Stone Lion's Head, and the main hill among them is the Lotus, or Lian Hua. It was named so because a huge stone at the top resembled a lotus flower in its outlines. Most likely, this shape of the stone was achieved in ancient times, when the Chinese were mining the rock here, extracting building material. Therefore, the same lotus could be formed as a result of the fusion of natural processes and anthropogenic activities."
+        },
+        {
+          "imageUrl": "china/5_lijiang_old_town.jpg",
+          "name": "Lijiang Old Town (Yunnan Province)",
+          "description": "The city preserves an authentic building with entourage tile roofs, although it is worth remembering that most of these buildings are skillfully erected copies of demolished old structures. The whole town is a single composition with the waters of the Yuquanhe River, which, splitting into 3 branches, seems to permeate all the streets, and graceful bridges thrown over numerous streams flaunt everywhere. Dozens of narrow cobbled streets are intricately intertwined with each other, and houses in the national style are originally inscribed in the surrounding mountain landscape."
+        },
+        {
+          "imageUrl": "china/6_taishan_mountain.jpg",
+          "name": "Mount Taishan (Shandong Province)",
+          "description": "According to myths, the five mountains of China were created from the body of the Creator, and Taishan was the main one, since it was formed from the head of a supreme deity. Today there are two ways to climb the mountain: the first is on foot, the second is by bus or funicular. The second way is usually for visiting tourists, and the first way is for local, mostly elderly people. Making a 7-kilometer ascent through 6 thousand stone steps, they firmly believe that their pilgrimage will help them gain the favor of the gods."        
+        }        
+      ],
+      "videoUrl": "https://youtu.be/nGkaYARL48s" 
+    },
+
+    {
+      "lang": 1,
+      "id": 6,
+      "name": "Italy",
+      "capital": "Rome",
+      "smallImageUrl": "italy/italy.jpg",
+      "description": "Italy (official name of the Italian Republic) is a state in Southern Europe, in the center of the Mediterranean. It is a member of the European Union and NATO since their inception, and is the third largest economy in the eurozone. Italy is a unitary republic of the parliamentary type. The main law of the state is the constitution, adopted in 1947. The head of state is the President of Italy. Italy has 53 UNESCO World Heritage Sites - more than any other country in the world.",
+      "sightseeings": [
+        {
+          "imageUrl": "italy/1_the_colosseum.jpg",
+          "name": "Colosseum (Rome)",
+          "description": "This is a huge amphitheater, built back in 72 AD. and became the main symbol of the Roman Empire. This building once accommodated 55 thousand people, and its fame spread far beyond the borders of the country. Its shape is an ellipse, the length of which is 188 m, and the width is 156 m. The strength of the structure is preserved due to the fact that an arch capable of withstanding colossal loads was chosen as the main architectural element. During the performances, an awning was stretched over the Colosseum to protect the audience from the scorching sun and rain. For this, ships were used standing on the Tiber River with special cables attached to them, which, after stretching the awning, were fixed on huge pillars located on the outside of the building."
+        },
+        {
+          "imageUrl": "italy/2_the_sistine_chapel.jpg",
+          "name": "Sistine Chapel (Rome, Vatican)",
+          "description": "In 1509, on November 1, thousands of Romans, led by Pope Julius II, froze in admiration and bowed their heads before the great genius Michelangelo Buonarotti, seeing the vault of the Sistine Chapel. Considering himself a sculptor, Buonarotti was simply forced due to certain circumstances to take on the painting of the vault of the chapel. Due to non-observance of some of the nuances of the technique of creating frescoes, the first paintings disappeared. Then the master had to rip them off and create anew, having previously deduced his own recipe for plaster and paints. The building is 20 meters high."
+        },
+        {
+          "imageUrl": "italy/3_the-grand-canal-in-venice.jpg",
+          "name": "Grand Canal (Venice)",
+          "description": "A sight created by nature itself. The canal starts from the Basin of St. Mark and stretches in a large S for almost 4 km to Santa Lucia train station. The depth of 5 meters allows sea trams and other light water transport to move freely along it. Traveling along the water surface of the Grand Canal, you can leisurely explore the beauty of this unique city."
+        },
+        {
+          "imageUrl": "italy/4_the_leaning_tower_of_pisa",
+          "name": "Leaning Tower of Pisa (Pisa)",
+          "description": "The list of the most famous sights of Italy certainly includes the Leaning Tower of Pisa, which is the bell tower of the Cathedral of Santa Maria Assunta. Its first floor consists of a cascade of arches, and at the entrance visitors are greeted with majestic bas-reliefs. All subsequent floors are surrounded by galleries, the outer parts of which form graceful columns. The tower is crowned with a huge belfry, inside which there is a three-ton bell."
+        },
+        {
+          "imageUrl": "italy/5_positano.jpg",
+          "name": "Positano (province of Salerno)",
+          "description": "Everything that allows you to call this place a 'paradise' is collected here. An amazing riot of colors created by nature is combined with man-made buildings. On the streets, you can see numerous artists who, for a small fee, will paint a portrait or a landscape you like. The variety of architectural styles is due to historical events that have taken place in this area over the course of many centuries."
+        },
+        {
+          "imageUrl": "italy/6_pompeii.jpg",
+          "name": "Pompeii (province of Naples)",
+          "description": "Pompeii is a unique dead city, liberated by scientists from a multi-meter layer of ash and is now a huge open-air museum. The city was completely destroyed during the eruption of Mount Vesuvius in 79 AD. And only seventeen centuries later, excavations began. Due to the negligence of archaeologists, many artifacts were destroyed, as they were not of artistic value. But since 1960, restoration work began to be carried out, which made it possible to almost completely recreate the once perished city of Pompeii."
+        }
+      ],
+      "videoUrl": "https://youtu.be/1rvSsnqZyyc"
+    },
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Travel app",
+    "version": "1.0.0-oas3"
+  },
+  "paths": {
+    "/locale": {
+      "get": {
+        "tags": ["all locales"],
+        "responses": {
+          "200": {
+            "description": "list of all available locales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Locale"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locale/{lang}": {
+      "get": {
+        "tags": ["all locales"],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "description": "lang to detail",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "full list of localized texts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/countries": {
+      "get": {
+        "tags": ["countries"],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "language",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of countries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleCountry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/countries/countryoftheday": {
+      "get": {
+        "tags": ["all users"],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "language",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "country of the day",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleCountry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/countries/{countryISO}": {
+      "get": {
+        "tags": ["countries"],
+        "parameters": [
+          {
+            "name": "countryISO",
+            "in": "path",
+            "description": "country ISO to detail",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "language",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "country and attractions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplexCountry"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/countries/{countryISO}/{attractionId}": {
+      "post": {
+        "tags": ["attractions"],
+        "parameters": [
+          {
+            "name": "countryISO",
+            "in": "path",
+            "description": "country ISO to detail",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attractionId",
+            "in": "path",
+            "description": "attraction ID to post",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "login",
+            "in": "query",
+            "description": "user login",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "score",
+            "in": "query",
+            "description": "attraction score",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/signin": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "403": {
+          "desctiption": "incorrect login or password"
+        }
+      }
+    },
+    "/signup": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/body_1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "desctiption": "login already taken"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Locale": {
+        "type": "object",
+        "properties": {
+          "lang": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "SimpleCountry": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "vidoUrl": {
+            "type": "string",
+            "example": "www.vido.com"
+          },
+          "ISOCode": {
+            "type": "string",
+            "example": "BLR"
+          },
+          "capital": {
+            "$ref": "#/components/schemas/Capital"
+          },
+          "description": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string",
+            "example": "BYN"
+          }
+        }
+      },
+      "ComplexCountry": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SimpleCountry"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "attractions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Attraction"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Capital": {
+        "type": "object",
+        "properties": {
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "name": {
+            "type": "string",
+            "example": "Minsk"
+          },
+          "timeZoneName": {
+            "type": "string",
+            "example": "Europe/Minsk"
+          }
+        }
+      },
+      "Attraction": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "example": "OMON"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "ratings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attraction_ratings"
+            }
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "example": "Vasya"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "Attraction_ratings": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": "number"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "body": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string"
+          },
+          "passwprd": {
+            "type": "string"
+          }
+        }
+      },
+      "body_1": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string",
+            "format": "binary"
+          }
+        }
+      }
+    }
+  }
+}

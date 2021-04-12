@@ -17,8 +17,10 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
   const [widgetHeader, setWidgetHeader] = useState<string>("");
   const [currencyTitle, setCurrencyTitle] = useState<string>("");
   const [exchangeRate, setExchangeRate] = useState<string>("");
-  console.log(props.countryInfo);
-
+  let courseEur = 0;
+  let courseByn = 0;
+  let courseCurrent = 0;
+  
   useEffect(() => {
     if (props.conveyLanguage === "en") {
       setCurrencyTitle("Сurrency - ");
@@ -41,6 +43,7 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
         const url = `http://api.currencylayer.com/live?access_key=374a7a1666c6f48dc91d86a63e62a2ff`;
         const res = await fetch(url);
         const data = await res.json();
+        console.log(data)
         setСourse(data);
         setLoading(true);
       }
@@ -49,10 +52,11 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
   }, [props.conveyLanguage]);
   const getCourseUSD = () => {
     for (let key in course.quotes) {
-      if (key === courseUSD) {
-        return course.quotes[key];
-      }
+      if (key === courseUSD) courseCurrent = course.quotes[key];
+      if (key === "USDEUR") courseEur = course.quotes[key];
+      if (key === "USDBYN") courseByn = course.quotes[key];
     }
+        return courseCurrent;
   };
 
   if (!loading) {
@@ -62,16 +66,13 @@ const ExchangeRates: React.FC<HeaderExchangeRates> = (props) => {
     <Container className="p-1 date-widget-block mb-2">
       <Card className="date-widget-card">
         <Card.Header className="text-primary font-weight-normal">
-          {widgetHeader}
+          {widgetHeader} 
         </Card.Header>
         <Card.Body>
-          <Card.Title>
-            {currencyTitle}
-            {props.countryInfo.currencies[0].code}
-          </Card.Title>
-          <Card.Text className="exchangeRate-text">{exchangeRate}</Card.Text>
           <Card.Text>
-            {getCourseUSD()} - {props.countryInfo.currencies[0].code}
+            1 USD - {getCourseUSD().toFixed(2)} {props.countryInfo.currencies[0].code}<br />
+            1 EUR - {(courseCurrent/courseEur).toFixed(2)} {props.countryInfo.currencies[0].code}<br /> 
+            1 BYN - {(courseCurrent/courseByn).toFixed(2)} {props.countryInfo.currencies[0].code}
           </Card.Text>
         </Card.Body>
       </Card>
