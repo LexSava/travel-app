@@ -20,6 +20,7 @@
     "react-bootstrap-icons": "^1.4.0",
     "react-datetime": "^3.0.4",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^7.0.6",
     "react-moment": "^1.1.1",
     "react-player": "^2.9.0",
     "react-router": "^5.2.0",

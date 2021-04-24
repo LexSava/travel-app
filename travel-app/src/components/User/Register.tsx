@@ -7,22 +7,24 @@ import config from "../../config";
 const Register = (conveyLanguage: any) => {
   const { register, handleSubmit, errors } = useForm();
   const [message, setMessage] = useState({
-      data: "",
-      type: "hidden",
-    });
-  
-  const onSubmit:any = (data: any, e: { target: { reset: () => Event; }; }) => {
+    data: "",
+    type: "hidden",
+  });
+
+  const onSubmit: any = (data: any, e: { target: { reset: () => Event } }) => {
     setMessage({
       data: "Registration is in progress...",
       type: "alert-warning",
     });
-    const init: RequestInit = {method: "POST",
-      mode: 'no-cors',
+    const init: RequestInit = {
+      method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)}
-    console.log(data)
+      body: JSON.stringify(data),
+    };
+    console.log(data);
     fetch(`${config.baseUrl}/user/register`, init)
       .then((res) => res.json())
       .then((data) => {
@@ -37,8 +39,7 @@ const Register = (conveyLanguage: any) => {
   };
 
   return (
-    <div
-      className="usercontainer container-fluid d-flex align-items-center justify-content-center">
+    <div className="usercontainer container-fluid d-flex align-items-center justify-content-center">
       <div className="registrationFormContainer">
         {message && (
           <div
@@ -49,18 +50,19 @@ const Register = (conveyLanguage: any) => {
             <span
               aria-hidden="true"
               className="ml-auto cursor-pointer"
-              onClick={() => setMessage({
-                data: "",
-                type: "alert-warning",
-                })}
+              onClick={() =>
+                setMessage({
+                  data: "",
+                  type: "alert-warning",
+                })
+              }
             >
               &times;
             </span>
           </div>
         )}
         <fieldset className="border p-3 rounded">
-          <legend
-            className="registrationFormLegend border rounded p-1 text-center">
+          <legend className="registrationFormLegend border rounded p-1 text-center">
             Registration Form
           </legend>
           <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
