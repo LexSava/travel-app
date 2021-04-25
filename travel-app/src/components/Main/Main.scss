@@ -1,0 +1,36 @@
+.main {
+  background-image: url(../../assets/img/background_main.jpg);
+  background-size: 115%;
+  padding: 20px 10px;
+}
+.card-country {
+  cursor: pointer;
+  margin: 20px 10px;
+  overflow: hidden;
+  transition: all 0.2s linear;
+  background-color: #ffffff45;
+  img {
+    height: 165px;
+    transition: all 0.2s linear;
+  }
+}
+.card-country:hover {
+  transform: scale(1.01, 1.01);
+  img {
+    transform: scale(1.05, 1.05);
+  }
+}
+.card-country-title {
+  font-weight: 800;
+}
+.card-country-text {
+  font-weight: 600;
+}
+.link-card-country:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 769px) {
+  .link-card-country {
+    margin: 0 auto;
+  }
+}

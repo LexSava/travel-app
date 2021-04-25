@@ -1,0 +1,57 @@
+.header-block {
+  padding: 0;
+}
+.header {
+  padding: 20px 10px;
+}
+.logo-block {
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s linear;
+  h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+  }
+}
+.logo-block:hover {
+  transform: scale(1.02, 1.02);
+}
+.logo {
+  width: 60px;
+  border-radius: 50px;
+}
+.head {
+  margin-left: 15px;
+}
+.link-logo-block:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 769px) {
+  .link-logo-block {
+    margin: 0 auto;
+  }
+  .frorm-block {
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 579px) {
+  .form-inline {
+    button {
+      margin-top: 10px;
+    }
+  }
+  .language-select {
+    display: contents;
+    div {
+      margin-left: 10px;
+    }
+  }
+}
+@media screen and (max-width: 328px) {
+  .language-select {
+    div {
+      margin: 0 auto;
+    }
+  }
+}

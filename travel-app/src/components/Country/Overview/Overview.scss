@@ -1,0 +1,81 @@
+.country-overview {
+  .jumbotron {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 50vh;
+    background-blend-mode: overlay;
+  }
+
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__image {
+      width: 40%;
+    }
+
+    &__content {
+      margin-left: 2%;
+      &__capital {
+      }
+
+      .overview-title {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  &__description {
+    text-align: center;
+    margin-top: 3%;
+  }
+}
+
+.text-capital {
+  color: green;
+  font-size: 2rem;
+}
+
+.widget-block {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .country-overview__main__image {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 360px) {
+  .country-overview {
+    &__main {
+      &__content {
+        .overview-title {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+.widget-block {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .country-overview__main__image {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 360px) {
+  .country-overview {
+    &__main {
+      &__content {
+        .overview-title {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
